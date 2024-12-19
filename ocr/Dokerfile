@@ -1,0 +1,17 @@
+FROM debian:latest
+
+# Installazione di Tesseract OCR
+RUN apt-get update && apt-get install -y tesseract-ocr && apt-get clean
+
+# Creazione di directory per le immagini e i risultati
+RUN mkdir -p /data/input /data/output
+
+# Copia dello script di esecuzione
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
+
+# Directory di lavoro
+WORKDIR /data
+
+# Esecuzione dello script all'avvio
+CMD [ "/run.sh" ]

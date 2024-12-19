@@ -1,0 +1,14 @@
+{
+  "name": "OCR Processor",
+  "version": "1.0.0",
+  "slug": "ocr",
+  "description": "An OCR server for Home Assistant.",
+  "startup": "services",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "host_network": true,
+  "options": {},
+  "schema": {},
+  "ports": {
+    "5000/tcp": 5000
+  }
+}
