@@ -1,13 +1,14 @@
 {
-  "name": "OCR Processor",
+  "name": "Tesseract OCR",
   "version": "1.0.0",
   "slug": "ocr",
-  "description": "An OCR server for Home Assistant.",
-  "startup": "services",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
-  "host_network": true,
+  "description": "Add-on per utilizzare Tesseract OCR in Home Assistant",
+  "arch": ["amd64", "armv7", "aarch64"],
+  "startup": "application",
+  "boot": "manual",
   "options": {},
   "schema": {},
+  "webui": "http://[HOST]:[PORT]",
   "ports": {
     "5000/tcp": 5000
   }
