@@ -1,9 +1,9 @@
 {
-  "name": "OCR Addon",
+  "name": "OCR Add-on",
   "version": "1.0",
-  "slug": "ocr_addon",
-  "description": "Addon OCR con Tesseract",
-  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "slug": "ocr",
+  "description": "Add-on OCR personalizzato.",
+  "arch": ["amd64", "armv7", "armhf", "i386"],
   "startup": "application",
   "boot": "auto",
   "options": {},
