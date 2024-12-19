@@ -1,15 +1,11 @@
 {
-  "name": "Tesseract OCR",
-  "version": "1.0.0",
-  "slug": "ocr",
-  "description": "Add-on per utilizzare Tesseract OCR in Home Assistant",
-  "arch": ["amd64", "armv7", "aarch64"],
+  "name": "OCR Addon",
+  "version": "1.0",
+  "slug": "ocr_addon",
+  "description": "Addon OCR con Tesseract",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "application",
-  "boot": "manual",
+  "boot": "auto",
   "options": {},
-  "schema": {},
-  "webui": "http://[HOST]:[PORT]",
-  "ports": {
-    "5000/tcp": 5000
-  }
+  "schema": {}
 }
