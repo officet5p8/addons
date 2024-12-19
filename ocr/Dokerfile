@@ -1,17 +1,15 @@
-FROM debian:latest
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.3
+FROM $BUILD_FROM
 
-# Installazione di Tesseract OCR
-RUN apt-get update && apt-get install -y tesseract-ocr && apt-get clean
+# Set timezone
+ENV TZ="Europe/Rome"
 
-# Creazione di directory per le immagini e i risultati
-RUN mkdir -p /data/input /data/output
+# Install Tesseract
+RUN apk add --no-cache tesseract-ocr tesseract-ocr-data-eng
 
-# Copia dello script di esecuzione
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
+# Copy files
+COPY run.sh /usr/bin/run.sh
+RUN chmod +x /usr/bin/run.sh
 
-# Directory di lavoro
-WORKDIR /data
-
-# Esecuzione dello script all'avvio
-CMD [ "/run.sh" ]
+# Entrypoint
+CMD [ "/usr/bin/run.sh" ]
