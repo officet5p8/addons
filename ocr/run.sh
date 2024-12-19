@@ -1,13 +1,6 @@
-#!/bin/bash
-
-# Loop infinito per monitorare nuove immagini
+#!/usr/bin/env bash
+echo "Avvio del servizio Tesseract OCR..."
 while true; do
-    for img in /data/input/*.jpg; do
-        [ -f "$img" ] || continue
-        output="/data/output/$(basename "$img" .jpg).txt"
-        tesseract "$img" "$output" -c tessedit_char_whitelist=0123456789 --psm 6
-        echo "Processed: $img -> $output"
-        rm "$img"
-    done
-    sleep 5
+    # Puoi configurare qui un server che ascolta per richieste OCR, ad esempio Flask o un altro framework.
+    sleep 15
 done
