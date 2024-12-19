@@ -1,15 +1,7 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.3
-FROM $BUILD_FROM
+FROM ghcr.io/home-assistant/amd64-base:latest
 
-# Set timezone
-ENV TZ="Europe/Rome"
+RUN apk add --no-cache tesseract-ocr
+COPY run.sh /run.sh
+RUN chmod +x /run.sh
 
-# Install Tesseract
-RUN apk add --no-cache tesseract-ocr tesseract-ocr-data-eng
-
-# Copy files
-COPY run.sh /usr/bin/run.sh
-RUN chmod +x /usr/bin/run.sh
-
-# Entrypoint
-CMD [ "/usr/bin/run.sh" ]
+CMD [ "/run.sh" ]
